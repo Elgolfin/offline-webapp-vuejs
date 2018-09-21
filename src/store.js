@@ -5,10 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    offline: 'up'
   },
   mutations: {
-
+    switchState (state) {
+      if (state.offline == 'up') {
+        state.offline = 'down'
+      } else {
+        state.offline
+      }
+    }
   },
   actions: {
 
