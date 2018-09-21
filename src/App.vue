@@ -11,8 +11,6 @@
 
 <script>
 /* global Offline */
-// @ is an alias to /src
-import OnlineState from '@/components/OnlineState.vue'
 
 export default {
   name: 'online-state',
@@ -25,11 +23,11 @@ export default {
     }
 
     // Hook the event related the state change
-    Offline.on('confirmed-down', function () {
+    Offline.on('down', function () {
       vm.$store.dispatch('switchState')
     });
 
-    Offline.on('confirmed-up', function () {
+    Offline.on('up', function () {
       vm.$store.dispatch('switchState')
     });
   }
