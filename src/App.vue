@@ -18,6 +18,13 @@ export default {
   name: 'online-state',
   created: function () {
     let vm = this
+    // By default the application network state is set to up
+    // Revert it, if for some reason the app is running in offline mode
+    if (Offline.state === 'down') {
+      vm.$store.dispatch('switchState')
+    }
+
+    // Hook the event related the state change
     Offline.on('confirmed-down', function () {
       vm.$store.dispatch('switchState')
     });
