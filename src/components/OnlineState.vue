@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     upppercaseState: function () {
-      return Offline.state;
+      return this.$store.state.offline || 'test'
     }
   }
 }

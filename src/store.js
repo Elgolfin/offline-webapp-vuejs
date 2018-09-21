@@ -12,11 +12,13 @@ export default new Vuex.Store({
       if (state.offline == 'up') {
         state.offline = 'down'
       } else {
-        state.offline
+        state.offline = 'up'
       }
     }
   },
   actions: {
-
+    switchState (context) {
+      context.commit('switchState')
+    }
   }
 })

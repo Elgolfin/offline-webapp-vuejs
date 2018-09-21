@@ -9,6 +9,26 @@
   </div>
 </template>
 
+<script>
+/* global Offline */
+// @ is an alias to /src
+import OnlineState from '@/components/OnlineState.vue'
+
+export default {
+  name: 'online-state',
+  created: function () {
+    let vm = this
+    Offline.on('confirmed-down', function () {
+      vm.$store.dispatch('switchState')
+    });
+
+    Offline.on('confirmed-up', function () {
+      vm.$store.dispatch('switchState')
+    });
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
