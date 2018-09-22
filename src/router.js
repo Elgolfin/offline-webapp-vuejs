@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import OnlineState from './views/OnlineState.vue'
+import Debug from './views/Debug.vue'
 
 Vue.use(Router)
 
@@ -23,9 +23,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/online-state',
-      name: 'online-state',
-      component: OnlineState
+      path: '/debug',
+      name: 'debug',
+      component: Debug
     }
   ]
 })

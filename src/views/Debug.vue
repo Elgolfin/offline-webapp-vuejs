@@ -1,5 +1,5 @@
 <template>
-  <div class="online-state">
+  <div class="debug">
     <img alt="Vue logo" src="../assets/logo.png"/>
     <OnlineState state="test"/>
   </div>
@@ -10,7 +10,7 @@
 import OnlineState from '@/components/OnlineState.vue'
 
 export default {
-  name: 'online-state',
+  name: 'debug',
   components: {
     OnlineState
   }
